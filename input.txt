@@ -1,0 +1,13 @@
+HAI
+    WAZZUP
+        I HAS A NUM
+        I HAS A NUM
+    BUHBYE
+
+    BTW print literals and variables
+    BTW print literals and variables
+
+    VISIBLE num
+    VISIBLE num
+    
+KTHXBYE
