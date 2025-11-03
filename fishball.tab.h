@@ -84,10 +84,11 @@ union YYSTYPE
 {
 #line 13 "fishball.y"
 
-    int ival;     
+    int ival; 
+    float fval;    
     char* sval;  
 
-#line 91 "fishball.tab.h"
+#line 92 "fishball.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

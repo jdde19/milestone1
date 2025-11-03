@@ -40,7 +40,7 @@ NUMBR (\-)?[0-9]+
     yylval.sval = strdup(yytext);
     return YARN;}
 {NUMBAR} {
-    yylval.ival = atoi(yytext);
+    yylval.fval = (float)atoi(yytext);
     return NUMBAR;}
 {NUMBR} {
     yylval.ival = atoi(yytext);

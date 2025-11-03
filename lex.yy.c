@@ -902,7 +902,7 @@ case 19:
 YY_RULE_SETUP
 #line 42 "fishball.lex"
 {
-    yylval.ival = atoi(yytext);
+    yylval.fval = (float)atoi(yytext);
     return NUMBAR;}
 	YY_BREAK
 case 20:

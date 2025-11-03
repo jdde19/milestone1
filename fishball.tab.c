@@ -519,9 +519,9 @@ static const yytype_int8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    32,    32,    33,    37,    43,    44,    45,    46,    50,
-      52,    53,    54,    55,    57,    58,    61,    62,    63,    67,
-      68,    69,    70,    71,    72,    73,    78,    79,    80
+       0,    34,    34,    35,    39,    45,    46,    47,    48,    52,
+      54,    55,    56,    57,    59,    60,    63,    64,    65,    69,
+      70,    71,    72,    73,    74,    75,    80,    81,    82
 };
 #endif
 
@@ -1134,7 +1134,7 @@ yyreduce:
   switch (yyn)
     {
   case 3: /* start: HAI LINEBREAK statement KTHXBYE LINEBREAK  */
-#line 33 "fishball.y"
+#line 35 "fishball.y"
                                                {
         printf("read successfully\n");
         return 0;
@@ -1143,7 +1143,7 @@ yyreduce:
     break;
 
   case 4: /* start: LINEBREAK HAI LINEBREAK statement KTHXBYE LINEBREAK  */
-#line 37 "fishball.y"
+#line 39 "fishball.y"
                                                          {
         printf("read successfully\n");
         return 0;
@@ -1152,62 +1152,62 @@ yyreduce:
     break;
 
   case 19: /* arithmetic_expr: SUM expr AN expr  */
-#line 67 "fishball.y"
+#line 69 "fishball.y"
                      {printf("Arithmetic expression: SUM OF\n");}
 #line 1158 "fishball.tab.c"
     break;
 
   case 20: /* arithmetic_expr: DIFF expr AN expr  */
-#line 68 "fishball.y"
+#line 70 "fishball.y"
                         {printf("Arithmetic expression: DIFF OF\n");}
 #line 1164 "fishball.tab.c"
     break;
 
   case 21: /* arithmetic_expr: PRODUCT expr AN expr  */
-#line 69 "fishball.y"
+#line 71 "fishball.y"
                            {printf("Arithmetic expression: PRODUCT OF\n");}
 #line 1170 "fishball.tab.c"
     break;
 
   case 22: /* arithmetic_expr: QUOTIENT expr AN expr  */
-#line 70 "fishball.y"
+#line 72 "fishball.y"
                             {printf("Arithmetic expression: QUOTIENT OF\n");}
 #line 1176 "fishball.tab.c"
     break;
 
   case 23: /* arithmetic_expr: MOD expr AN expr  */
-#line 71 "fishball.y"
+#line 73 "fishball.y"
                        {printf("Arithmetic expression: MOD OF\n");}
 #line 1182 "fishball.tab.c"
     break;
 
   case 24: /* arithmetic_expr: BIGGER expr AN expr  */
-#line 72 "fishball.y"
+#line 74 "fishball.y"
                           {printf("Arithmetic expression: BIGGR OF\n");}
 #line 1188 "fishball.tab.c"
     break;
 
   case 25: /* arithmetic_expr: SMALLER expr AN expr  */
-#line 73 "fishball.y"
+#line 75 "fishball.y"
                            {printf("Arithmetic expression: SMALLR OF\n");}
 #line 1194 "fishball.tab.c"
     break;
 
   case 26: /* literal: YARN  */
-#line 78 "fishball.y"
+#line 80 "fishball.y"
          {printf("YARN: %s\n", (yyvsp[0].sval));}
 #line 1200 "fishball.tab.c"
     break;
 
   case 27: /* literal: NUMBR  */
-#line 79 "fishball.y"
+#line 81 "fishball.y"
             {printf("NUMBR: %i\n", (yyvsp[0].ival));}
 #line 1206 "fishball.tab.c"
     break;
 
   case 28: /* literal: NUMBAR  */
-#line 80 "fishball.y"
-             {printf("NUMBAR: %i\n", (yyvsp[0].ival));}
+#line 82 "fishball.y"
+             {printf("NUMBAR: %.1lf\n", (yyvsp[0].fval));}
 #line 1212 "fishball.tab.c"
     break;
 
@@ -1406,7 +1406,7 @@ yyreturn:
   return yyresult;
 }
 
-#line 83 "fishball.y"
+#line 85 "fishball.y"
 
 
 void yyerror(char *s)

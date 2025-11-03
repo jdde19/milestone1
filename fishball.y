@@ -11,7 +11,8 @@
 
 %union 
 {
-    int ival;     
+    int ival; 
+    float fval;    
     char* sval;  
 }
 
@@ -20,7 +21,8 @@
 %token DECLARATION WAZZUP BUHBYE
 %token VISIBLE 
 %token <sval> YARN IDENTIFIER
-%token <ival> NUMBAR NUMBR
+%token <fval> NUMBAR 
+%token <ival> NUMBR
 %token SUM DIFF PRODUCT QUOTIENT MOD BIGGER SMALLER
 %token AN ITZ
 %type assignment declaration
@@ -77,7 +79,7 @@ arithmetic_expr:
 literal: 
     YARN {printf("YARN: %s\n", $1);}
     | NUMBR {printf("NUMBR: %i\n", $1);}
-    | NUMBAR {printf("NUMBAR: %i\n", $1);}
+    | NUMBAR {printf("NUMBAR: %.1lf\n", $1);}
     ;
 
 %%
