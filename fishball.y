@@ -9,12 +9,18 @@
     int x;
 %}
 
+%union 
+{
+    int ival;     
+    char* sval;  
+}
 
-%token HAI KTHXBYE LINEBREAK IDENTIFIER 
+
+%token HAI KTHXBYE LINEBREAK 
 %token DECLARATION WAZZUP BUHBYE
-%token SINGLE_COMMENT
 %token VISIBLE 
-%token YARN NUMBAR NUMBR
+%token <sval> YARN IDENTIFIER
+%token <ival> NUMBAR NUMBR
 %token SUM DIFF PRODUCT QUOTIENT MOD BIGGER SMALLER
 %token AN ITZ
 %type assignment declaration
@@ -58,20 +64,20 @@ expr:
     ;
 
 arithmetic_expr:
-    SUM expr AN expr
-    | DIFF expr AN expr
-    | PRODUCT expr AN expr
-    | QUOTIENT expr AN expr
-    | MOD expr AN expr
-    | BIGGER expr AN expr
-    | SMALLER expr AN expr
+    SUM expr AN expr {printf("Arithmetic expression: SUM OF\n");}
+    | DIFF expr AN expr {printf("Arithmetic expression: DIFF OF\n");}
+    | PRODUCT expr AN expr {printf("Arithmetic expression: PRODUCT OF\n");}
+    | QUOTIENT expr AN expr {printf("Arithmetic expression: QUOTIENT OF\n");}
+    | MOD expr AN expr {printf("Arithmetic expression: MOD OF\n");}
+    | BIGGER expr AN expr {printf("Arithmetic expression: BIGGR OF\n");}
+    | SMALLER expr AN expr {printf("Arithmetic expression: SMALLR OF\n");}
     ;
 
 
 literal: 
-    YARN
-    | NUMBR
-    | NUMBAR
+    YARN {printf("YARN: %s\n", $1);}
+    | NUMBR {printf("NUMBR: %i\n", $1);}
+    | NUMBAR {printf("NUMBAR: %i\n", $1);}
     ;
 
 %%

@@ -57,31 +57,40 @@ extern int yydebug;
     HAI = 258,                     /* HAI  */
     KTHXBYE = 259,                 /* KTHXBYE  */
     LINEBREAK = 260,               /* LINEBREAK  */
-    IDENTIFIER = 261,              /* IDENTIFIER  */
-    DECLARATION = 262,             /* DECLARATION  */
-    WAZZUP = 263,                  /* WAZZUP  */
-    BUHBYE = 264,                  /* BUHBYE  */
-    SINGLE_COMMENT = 265,          /* SINGLE_COMMENT  */
-    VISIBLE = 266,                 /* VISIBLE  */
-    YARN = 267,                    /* YARN  */
-    NUMBAR = 268,                  /* NUMBAR  */
-    NUMBR = 269,                   /* NUMBR  */
-    SUM = 270,                     /* SUM  */
-    DIFF = 271,                    /* DIFF  */
-    PRODUCT = 272,                 /* PRODUCT  */
-    QUOTIENT = 273,                /* QUOTIENT  */
-    MOD = 274,                     /* MOD  */
-    BIGGER = 275,                  /* BIGGER  */
-    SMALLER = 276,                 /* SMALLER  */
-    AN = 277,                      /* AN  */
-    ITZ = 278                      /* ITZ  */
+    DECLARATION = 261,             /* DECLARATION  */
+    WAZZUP = 262,                  /* WAZZUP  */
+    BUHBYE = 263,                  /* BUHBYE  */
+    VISIBLE = 264,                 /* VISIBLE  */
+    YARN = 265,                    /* YARN  */
+    IDENTIFIER = 266,              /* IDENTIFIER  */
+    NUMBAR = 267,                  /* NUMBAR  */
+    NUMBR = 268,                   /* NUMBR  */
+    SUM = 269,                     /* SUM  */
+    DIFF = 270,                    /* DIFF  */
+    PRODUCT = 271,                 /* PRODUCT  */
+    QUOTIENT = 272,                /* QUOTIENT  */
+    MOD = 273,                     /* MOD  */
+    BIGGER = 274,                  /* BIGGER  */
+    SMALLER = 275,                 /* SMALLER  */
+    AN = 276,                      /* AN  */
+    ITZ = 277                      /* ITZ  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef int YYSTYPE;
+union YYSTYPE
+{
+#line 13 "fishball.y"
+
+    int ival;     
+    char* sval;  
+
+#line 91 "fishball.tab.h"
+
+};
+typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
 #endif

@@ -799,121 +799,136 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 12 "fishball.lex"
-{return HAI;}
+{
+    printf("Start of program\n");
+    return HAI;
+}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 13 "fishball.lex"
-{return KTHXBYE;}
+#line 16 "fishball.lex"
+{
+    printf("End of program\n");
+    return KTHXBYE;
+}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 14 "fishball.lex"
+#line 20 "fishball.lex"
 {return WAZZUP;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 15 "fishball.lex"
+#line 21 "fishball.lex"
 {return BUHBYE;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 16 "fishball.lex"
+#line 22 "fishball.lex"
 {return DECLARATION;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 17 "fishball.lex"
+#line 23 "fishball.lex"
 {return VISIBLE;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 18 "fishball.lex"
+#line 24 "fishball.lex"
 {return SUM;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 19 "fishball.lex"
+#line 25 "fishball.lex"
 {return DIFF;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 20 "fishball.lex"
+#line 26 "fishball.lex"
 {return PRODUCT;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 21 "fishball.lex"
+#line 27 "fishball.lex"
 {return QUOTIENT;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 22 "fishball.lex"
+#line 28 "fishball.lex"
 {return MOD;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 23 "fishball.lex"
+#line 29 "fishball.lex"
 {return BIGGER;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 24 "fishball.lex"
+#line 30 "fishball.lex"
 {return SMALLER;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 25 "fishball.lex"
-{return AN;}
+#line 31 "fishball.lex"
+{
+    printf("Multiple parameter separator: AN\n");
+    return AN;
+}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 26 "fishball.lex"
+#line 35 "fishball.lex"
 {return ITZ;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 28 "fishball.lex"
+#line 37 "fishball.lex"
 {return IDENTIFIER;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 29 "fishball.lex"
+#line 38 "fishball.lex"
 { /* nothing */ }
 	YY_BREAK
 case 18:
 /* rule 18 can match eol */
 YY_RULE_SETUP
-#line 30 "fishball.lex"
-{return YARN;}
+#line 39 "fishball.lex"
+{
+    yylval.sval = strdup(yytext);
+    return YARN;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 31 "fishball.lex"
-{return NUMBAR;}
+#line 42 "fishball.lex"
+{
+    yylval.ival = atoi(yytext);
+    return NUMBAR;}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 32 "fishball.lex"
-{return NUMBR;}
+#line 45 "fishball.lex"
+{
+    yylval.ival = atoi(yytext);
+    return NUMBR;}
 	YY_BREAK
 case 21:
 /* rule 21 can match eol */
 YY_RULE_SETUP
-#line 33 "fishball.lex"
+#line 48 "fishball.lex"
 {return LINEBREAK;}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 34 "fishball.lex"
+#line 49 "fishball.lex"
 
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 35 "fishball.lex"
+#line 50 "fishball.lex"
 ECHO;
 	YY_BREAK
-#line 916 "lex.yy.c"
+#line 931 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1918,5 +1933,5 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 35 "fishball.lex"
+#line 50 "fishball.lex"
 

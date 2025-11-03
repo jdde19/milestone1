@@ -9,8 +9,14 @@ NUMBAR (\-)?[0-9]*\.[0-9]+
 NUMBR (\-)?[0-9]+
 
 %%
-"HAI" {return HAI;}
-"KTHXBYE" {return KTHXBYE;}
+"HAI" {
+    printf("Start of program\n");
+    return HAI;
+}
+"KTHXBYE" {
+    printf("End of program\n");
+    return KTHXBYE;
+}
 "WAZZUP" {return WAZZUP;}
 "BUHBYE" {return BUHBYE;}
 "I HAS A" {return DECLARATION;}
@@ -22,14 +28,23 @@ NUMBR (\-)?[0-9]+
 "MOD OF" {return MOD;}
 "BIGGR OF" {return BIGGER;}
 "SMALLR OF" {return SMALLER;}
-"AN" {return AN;}
+"AN" {
+    printf("Multiple parameter separator: AN\n");
+    return AN;
+}
 "ITZ" {return ITZ;}
 
 {IDENTIFIER} {return IDENTIFIER;}
 {COMMENT} { /* nothing */ }
-{YARN} {return YARN;}
-{NUMBAR} {return NUMBAR;}
-{NUMBR} {return NUMBR;}
+{YARN} {
+    yylval.sval = strdup(yytext);
+    return YARN;}
+{NUMBAR} {
+    yylval.ival = atoi(yytext);
+    return NUMBAR;}
+{NUMBR} {
+    yylval.ival = atoi(yytext);
+    return NUMBR;}
 \n {return LINEBREAK;}
 [ \t] 
 %%
