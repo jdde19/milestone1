@@ -34,7 +34,10 @@ NUMBR (\-)?[0-9]+
 }
 "ITZ" {return ITZ;}
 
-{IDENTIFIER} {return IDENTIFIER;}
+{IDENTIFIER} {
+        yylval.sval = strdup(yytext);
+        return IDENTIFIER; 
+    }
 {COMMENT} { /* nothing */ }
 {YARN} {
     yylval.sval = strdup(yytext);

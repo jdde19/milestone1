@@ -27,6 +27,9 @@ HAI
     VISIBLE prod
     VISIBLE quo
 
+    I HAS A newvar
+    I HAS A anothervar ITZ "okay na toh"
+
     BTW print expressions
     VISIBLE SUM OF PRODUKT OF 3 AN 5 AN BIGGR OF DIFF OF 17 AN 2 AN 5
     VISIBLE BIGGR OF PRODUKT OF 11 AN 2 AN QUOSHUNT OF SUM OF 3 AN 5 AN 2

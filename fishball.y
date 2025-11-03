@@ -50,11 +50,15 @@ statement:
 
 assignment:
     WAZZUP LINEBREAK declaration BUHBYE LINEBREAK
+    | declaration statement // read declarations outside of WAZZUP...BUHBYE
+    ;
 
 declaration:
     | LINEBREAK declaration // made this so that empty lines are not recognized as error
-    | DECLARATION IDENTIFIER LINEBREAK declaration
-    | DECLARATION IDENTIFIER ITZ expr LINEBREAK declaration
+    // print the identifier in the assignment/declaration statement
+    | DECLARATION IDENTIFIER LINEBREAK declaration { printf("Variable declared with no value: %s\n", $2); }
+    | DECLARATION IDENTIFIER ITZ expr LINEBREAK declaration { printf("Variable declared with value: %s\n", $2); }
+    ;
 
 print:
     | VISIBLE expr LINEBREAK print 
