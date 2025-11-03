@@ -34,7 +34,6 @@ HAI
     VISIBLE name
     VISIBLE fnum
     VISIBLE flag
-
     VISIBLE sum
     VISIBLE diff
     VISIBLE prod

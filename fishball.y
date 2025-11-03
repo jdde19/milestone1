@@ -20,14 +20,16 @@
 %type assignment declaration
 %type statement 
 %type print
-%type single_comment
 %type expr arithmetic_expr literal
 
 %%
 start: 
-    | single_comment start
     | HAI LINEBREAK statement KTHXBYE LINEBREAK{
-        printf("foo\n");
+        printf("read successfully\n");
+        return 0;
+    }
+    | LINEBREAK HAI LINEBREAK statement KTHXBYE LINEBREAK{
+        printf("read successfully\n");
         return 0;
     }
     ;
@@ -36,25 +38,18 @@ statement:
     | LINEBREAK statement
     | assignment statement 
     | print statement
-    | single_comment statement
     ;
-
 
 assignment:
     WAZZUP LINEBREAK declaration BUHBYE LINEBREAK
 
 declaration:
-    | single_comment declaration
     | LINEBREAK declaration // made this so that empty lines are not recognized as error
     | DECLARATION IDENTIFIER LINEBREAK declaration
     | DECLARATION IDENTIFIER ITZ expr LINEBREAK declaration
 
 print:
     | VISIBLE expr LINEBREAK print 
-
-single_comment:
-    SINGLE_COMMENT LINEBREAK
-    ;
 
 expr: 
     literal

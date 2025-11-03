@@ -1,12 +1,13 @@
+BTW SADASDSAD
 HAI
     WAZZUP
-        BTW Haasdasdas
+        BTW variable dec
         I HAS A monde
         I HAS A num ITZ 17
         I HAS A name ITZ "seventeen"
         I HAS A fnum ITZ 17.0
         I HAS A flag ITZ WIN
-
+        
         I HAS A sum ITZ SUM OF num AN 13
         I HAS A diff ITZ DIFF OF sum AN 17
         I HAS A prod ITZ PRODUKT OF 3 AN 4
@@ -15,7 +16,7 @@ HAI
 
     BTW print literals and variables
     VISIBLE "declarations"
-    VISIBLE flag
+    VISIBLE monde BTW should be NOOB
     VISIBLE num
     VISIBLE name
     VISIBLE fnum
@@ -30,4 +31,3 @@ HAI
     VISIBLE SUM OF PRODUKT OF 3 AN 5 AN BIGGR OF DIFF OF 17 AN 2 AN 5
     VISIBLE BIGGR OF PRODUKT OF 11 AN 2 AN QUOSHUNT OF SUM OF 3 AN 5 AN 2
 KTHXBYE
-

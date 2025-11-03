@@ -879,7 +879,7 @@ YY_RULE_SETUP
 case 17:
 YY_RULE_SETUP
 #line 29 "fishball.lex"
-{return SINGLE_COMMENT;}
+{ /* nothing */ }
 	YY_BREAK
 case 18:
 /* rule 18 can match eol */

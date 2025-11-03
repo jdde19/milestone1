@@ -26,7 +26,7 @@ NUMBR (\-)?[0-9]+
 "ITZ" {return ITZ;}
 
 {IDENTIFIER} {return IDENTIFIER;}
-{COMMENT} {return SINGLE_COMMENT;}
+{COMMENT} { /* nothing */ }
 {YARN} {return YARN;}
 {NUMBAR} {return NUMBAR;}
 {NUMBR} {return NUMBR;}
