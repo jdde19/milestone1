@@ -63,7 +63,18 @@ extern int yydebug;
     BUHBYE = 264,                  /* BUHBYE  */
     SINGLE_COMMENT = 265,          /* SINGLE_COMMENT  */
     VISIBLE = 266,                 /* VISIBLE  */
-    STRING = 267                   /* STRING  */
+    YARN = 267,                    /* YARN  */
+    NUMBAR = 268,                  /* NUMBAR  */
+    NUMBR = 269,                   /* NUMBR  */
+    SUM = 270,                     /* SUM  */
+    DIFF = 271,                    /* DIFF  */
+    PRODUCT = 272,                 /* PRODUCT  */
+    QUOTIENT = 273,                /* QUOTIENT  */
+    MOD = 274,                     /* MOD  */
+    BIGGER = 275,                  /* BIGGER  */
+    SMALLER = 276,                 /* SMALLER  */
+    AN = 277,                      /* AN  */
+    ITZ = 278                      /* ITZ  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
