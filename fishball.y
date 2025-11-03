@@ -45,7 +45,7 @@ assignment:
 
 declaration:
     | single_comment declaration
-    | LINEBREAK declaration // made this since
+    | LINEBREAK declaration // made this so that empty lines are not recognized as error
     | DECLARATION IDENTIFIER LINEBREAK declaration
     | DECLARATION IDENTIFIER ITZ expr LINEBREAK declaration
 
